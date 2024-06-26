@@ -3,9 +3,9 @@ const { GoogleGenerativeAI } = require("@google/generative-ai");
 const keep_alive = require("./keep_alive.js");
 
 const MODEL = "gemini-pro";
-const API_KEY = process.env.API_KEY ?? "";
-const BOT_TOKEN = process.env.BOT_TOKEN ?? "";
-const CHANNEL_ID = process.env.CHANNEL_ID ?? "1206255531367473173";
+const API_KEY = "AIzaSyBpkpZqqctNT8WLHJdUKqmm3j7si9F_h8g";
+const BOT_TOKEN = "MTEzNjcyNjE1MTU3MDY3MzgwNA.GDQ5RL.sL_cMCpYpFd8gbh3x6vTTu0-7hhAtH6JD4u0R4";
+const CHANNEL_ID = "1214052772740206643";
 
 const ai = new GoogleGenerativeAI(API_KEY);
 const model = ai.getGenerativeModel({ model: MODEL });

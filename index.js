@@ -1,11 +1,10 @@
 const discord = require("discord.js");
 const { GoogleGenerativeAI } = require("@google/generative-ai");
-const keep_alive = require("./keep_alive.js");
 
 const MODEL = "gemini-pro";
-const API_KEY = "AIzaSyBpkpZqqctNT8WLHJdUKqmm3j7si9F_h8g";
+const API_KEY = "aistudio.google.com";
 const BOT_TOKEN = process.env.token;
-const CHANNEL_ID = "1214052772740206643";
+const CHANNEL_ID = "ID DEL CANAL";
 
 const ai = new GoogleGenerativeAI(API_KEY);
 const model = ai.getGenerativeModel({ model: MODEL });
@@ -15,7 +14,7 @@ const client = new discord.Client({
 });
 
 client.on("ready", () => {
-  console.log("Swagat nahi karoge hamara!");
+  console.log("¡Activo papá!");
 });
 
 client.login(BOT_TOKEN);
@@ -25,9 +24,9 @@ client.on("messageCreate", async (message) => {
     if (message.channel.id !== CHANNEL_ID) return;
 
     const replyWithGeneratedText = async (text) => {
-      // Check if the generated text exceeds Discord's limit
+      // Evutar que genere mas de dos mil caracteres
       if (text.length > 2000) {
-        // Truncate the text to fit within the limit
+        // Ajustar el texto para que este en el limite
         text = text.substring(0, 1997) + "...";
       }
       await message.reply({
